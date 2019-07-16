@@ -65,6 +65,7 @@ class ApplicationController < Sinatra::Base
 
   get "/logout" do
     session.clear
+    User.find(session[:user_id])
     redirect "/"
   end
 
